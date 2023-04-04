@@ -1,3 +1,45 @@
+/* для фона */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0px 0px 2px 1px white;
+    animation: identifier infinite alternate;
+    z-index: -1;
+}
+
+@keyframes identifier {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    25% {
+        transform: scale(.9);
+        opacity: .8;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: .9;
+    }
+
+    75% {
+        transform: scale(.2);
+        opacity: .2;
+    }
+
+    100% {
+        transform: scale(.9);
+        opacity: .9;
+    }
+}
+
+
+
+/* тут ничего не трогать(везде всмысле) */
 .container {
     background-color: black;
     width: 80%;
@@ -6,20 +48,37 @@
     cursor: pointer;
     transition: 1s;
     transform: rotateX(5deg);
+
+    bottom: -100%;
     border-radius: 25px;
     border: 3px solid black;
 }
 
-body {
+.block {
+
+    height: 50vh;
+    width: 100%;
+}
+
+.second {
     display: flex;
     justify-content: center;
     align-items: end;
+    perspective: 1000px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+body {
     height: 100vh;
     overflow: hidden;
     margin: 0px;
     padding: 0px;
     background-color: black;
-    perspective: 1000px;
 }
 
 .full {
@@ -29,20 +88,18 @@ body {
 }
 
 .one {
-
+    z-index: 2;
     background-color: rgb(97, 97, 93);
-
-    
 }
-.size{
+
+.size {
     width: 85%;
     height: 75vh;
 }
 
 .two {
 
-    z-index: 0;
+    z-index: 3;
     background-color: rgb(50, 51, 51);
-    
 
 }
